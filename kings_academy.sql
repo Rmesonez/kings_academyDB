@@ -213,3 +213,15 @@ JOIN roles ON users.role_id=roles.id;
 
 
 
+----------------------
+--edad
+SELECT users.id, users.firstname, users.lastname, users.dob, DATEDIFF(YEAR, users.dob, GETDATE()) AS 'age' FROM users;
+
+-- otra forma de sacar la edad
+SELECT users.id, users.firstname, users.lastname, users.dob, YEAR(GETDATE())-YEAR(users.dob) AS 'age' FROM users;
+
+-- edad y rol
+SELECT users.id, users.firstname, users.lastname, users.dob, YEAR(GETDATE())-YEAR(users.dob) AS 'age', roles.role FROM users JOIN roles ON users.role_id=roles.id;
+
+-- pero no funcionaron ninguna de las dos
+
