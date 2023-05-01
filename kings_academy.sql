@@ -6,6 +6,7 @@ CREATE TABLE "users" (
   "lastname" varchar(20) NOT NULL,
   "email" varchar(20) NOT NULL,
   "dob" date NOT NULL,
+  "age" SMALLINT NOT NULL,
   "password" varchar(10) NOT NULL,
   "role_id" integer NOT NULL
 );
@@ -69,9 +70,9 @@ INSERT INTO categories (category) VALUES ('FrontEnd'), ('BackEnd');
 
 INSERT INTO roles (role) VALUES ('Student'), ('Teacher'), ('Admin');
 
-INSERT INTO users (firstname, lastname, email, dob, password, role_id) VALUES ('Reinaldo', 'Mesonez', 'rey@gmail.com', '1987-03-01', '12345', 1),
-('Jose', 'Mesonez', 'jose@gmail.com', '1941-06-02', '12345', 1), ('Ian', 'Rosas', 'ian@gmail.com' , '1991-03-02', '12345', 2)
-,('Alejandra', 'Olazagasti', 'ale@gmail.com', '1990-02-02', '12345', 2), ('Gumercindo', 'Gutierrez', 'gumer@gmail.com', '1970-08-06', '12345', 3);
+INSERT INTO users (firstname, lastname, email, dob, age, password, role_id) VALUES ('Reinaldo', 'Mesonez', 'rey@gmail.com', '1987-03-01', 36,  '12345', 1),
+('Jose', 'Mesonez', 'jose@gmail.com', '1941-06-02', 71, '12345', 1), ('Ian', 'Rosas', 'ian@gmail.com' , '1991-03-02', 32, '12345', 2)
+,('Alejandra', 'Olazagasti', 'ale@gmail.com', '1990-02-02', 31, '12345', 2), ('Gumercindo', 'Gutierrez', 'gumer@gmail.com', '1970-08-06', '12345', 3);
 
 INSERT INTO courses (title, description, teacher_id, category_id, level_id) VALUES ('HTML Course', 'Design the Frame', 4, 1, 1),
 ('Css Course', 'Web Styles', 4, 1, 1), ('NodeJs Course', 'Api Creation', 3, 2, 2), ('MongoDB Course', 'No relationals DB', 3, 2, 2),
